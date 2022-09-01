@@ -1,16 +1,29 @@
 :root {
     --mc: #008850;
-    --rc: #00e085;
+    --sc: #00e085;
 }
-
+/* .TopBanner에 paddig 주면 height:0되어도 padding이 남아있음(100px) + 어디에 overflow: hidden주는지도 관건 */
 .slick-track,
 .slick-list {
     transition-delay: 30ms;
 }
 
+body {
+    overflow-x: hidden;
+}
+
+.Wrap {
+    width: 100%;
+    min-width: 1900px;
+}
+
 .inner {
     width: 1200px;
     margin: 0 auto;
+}
+
+.mainColor {
+    color: #008850;
 }
 
 
@@ -22,8 +35,6 @@
     transition: 0.4s;
     line-height: 1;
 }
-
-/* .TopBanner에 paddig 주면 height:0되어도 padding이 남아있음(100px) + 어디에 overflow: hidden주는지도 관건 */
 
 .TopBanner .inner {
     position: relative;
@@ -231,6 +242,11 @@
     border-top: 1px solid #ddd;
     transform: rotate(45deg);
 }
+
+
+
+
+
 
 .Header .Gnb>ul>li {
     float: left;
@@ -674,7 +690,9 @@
     width: 40px;
     height: 2px;
     background: #008850;
+
 }
+
 
 .Section04 .inner a {
     display: inline-block;
