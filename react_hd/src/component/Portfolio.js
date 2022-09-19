@@ -14,6 +14,8 @@ const PTF = [
     { id: 9, title: "롯데월드몰" },
 ]
 
+// 배열 메소드를 공부하기... 검색하기... 스프레드 연산자...
+const NPTF = [...PTF, PTF[0]].splice(1, PTF.length);
 
 const Portfolio = () => {
     const LS = useRef();
@@ -68,7 +70,7 @@ const Portfolio = () => {
                             arrows={false}
                         >
                             {
-                                PTF.map(building => {
+                                NPTF.map(building => {
                                     return (
                                         <figure key={building.id}>
                                             <div className="box">

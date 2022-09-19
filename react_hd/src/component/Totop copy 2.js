@@ -16,14 +16,15 @@ const Btn = styled.div`
     visibility:hidden;
     opacity:0;
     cursor: pointer;
-    transition: 0.5s;
-    &:hover {
-        color: #ff0;
+${props => {
+        if (props.on) {
+            return `
+            visibility:visible;
+            opacity:1;
+            background: #000;
+        `
+        }
     }
-
-    &.on {
-        visibility:visible;
-        opacity:1;
     }
 `
 
@@ -49,7 +50,7 @@ const Totop = () => {
         }
     }, [])
     return (
-        <Btn onClick={totopHandler} className={scrollY > 400 && 'on'}>
+        <Btn onClick={totopHandler} on={scrollY > 400 ? scrollY : null}>
             <i className='xi-arrow-top'></i>
         </Btn>
     )
